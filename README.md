@@ -10,6 +10,6 @@ Python is a high-level programming language designed to be easy to read and simp
 
 # Kotlin Scripting
 Kotlin script has an extension .kts . The kotlin script needs to be executed in this way:
-    > kotlinc -script <script-name>.kts <args>
+> kotlinc -script <script-name>.kts <args>
 
 If kotlinc isn't recognized by the terminal then set the kotlin compiler path to the BASH.
