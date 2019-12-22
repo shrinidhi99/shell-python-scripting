@@ -4,7 +4,7 @@ from time import sleep
 
 usr = input('Enter username or email: ')
 pwd = input('Enter password: ')
-msg = input('Enter your tweet: ')
+image_path = input('Enter your image path: ')
 
 driver = webdriver.Chrome()
 driver.get('https://twitter.com/login')
@@ -22,8 +22,8 @@ login_button = driver.find_element_by_css_selector(
 login_button.submit()
 sleep(3)
 
-text_box = driver.find_element_by_id('tweet-box-home-timeline')
-text_box.send_keys(msg)
+image_box = driver.find_element_by_css_selector('input.file-input.js-tooltip')
+image_box.send_keys(image_path)
 sleep(3)
 
 tweet_button = driver.find_elements_by_css_selector(
