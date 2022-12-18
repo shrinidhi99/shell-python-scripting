@@ -129,3 +129,38 @@ s1="shrinidhi99.varna@gmail.com"
 if [[ ${s1} = +([a-z0-9])@([.])+([a-z0-9])@([@])+([a-z])@([.])+([a-z]) ]];then
     echo "string: ${s1} matches the pattern for an email" 
 fi
+
+# functions
+function f1 {
+   echo "Entering f1"
+   echo "Arguments passed: ${*}"
+   if [[ ${#} < 1 ]];then
+   echo "You haven't provided any argument. Hence exiting early from the function..."
+   return
+   fi
+   echo "Exiting f1"
+}
+
+f1 a b
+f1
+
+# Data redirection
+echo "New file -->" > file.txt
+echo "Appending to the same file -->" >> file.txt
+echo "Banana" >> file.txt
+echo "Apple" >> file.txt
+echo "error output redirection " 2>file-err.txt
+echo "error output redirection to the same file as normal output " 2>&1
+echo "Input: " < file.txt
+
+# pipes
+cat file.txt | more
+cat file.txt | grep Apple
+
+# grep
+cat file.txt | grep -i a
+
+# sort
+sort file.txt
+echo "---"
+sort -r file.txt
