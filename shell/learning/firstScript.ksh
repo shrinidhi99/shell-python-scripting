@@ -155,12 +155,43 @@ echo "Input: " < file.txt
 
 # pipes
 cat file.txt | more
+echo "---"
 cat file.txt | grep Apple
+echo "---end of pipes---"
 
 # grep
+# -i: Ignores, case for matching
 cat file.txt | grep -i a
+echo "---"
+# -v : This prints out all the lines that do not matches the pattern
+cat file.txt | grep -v A
+echo "---end of grep---"
 
 # sort
 sort file.txt
 echo "---"
 sort -r file.txt
+echo "---"
+cat file.txt | grep -i a | sort -r
+echo "---end of sort---"
+
+# Read Input from User and from Files
+echo "Enter something: "
+read var
+echo "You entered: ${var}"
+echo "Reading a file"
+{ while read myline;do
+   echo ${myline}
+done } < file.txt
+
+# special variables
+echo "#: Number of arguments on commandline: ${#}"
+echo "#: Exit status of last command: ${?}"
+echo "#: Process id of current program: ${$}"
+echo "#: Process id of last background job or background function: ${!}"
+echo "#: Program name including the path if started from another directory: ${0}"
+echo "#: Commandline arguments, each at a time: ${1}"
+echo "#: All commandline arguments in one string: ${*}"
+
+# sed
+sed 's/Apple/orange/g' file.txt > file2.txt
