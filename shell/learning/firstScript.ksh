@@ -134,7 +134,7 @@ fi
 function f1 {
    echo "Entering f1"
    echo "Arguments passed: ${*}"
-   if [[ ${#} < 1 ]];then
+   if [[ ${#} -lt 1 ]];then
    echo "You haven't provided any argument. Hence exiting early from the function..."
    return
    fi
