@@ -109,3 +109,24 @@ grep ".... | ...." learning/linux-tutorials.sh
 grep -P "\d{2}" learning/linux-tutorials.sh
 grep -wirlP "\d{2}" .
 
+# curl command
+# running a curl on a website
+curl https://coreyms.com
+
+# curl for a get request from a backend api running at localhost:3000
+curl http://localhost:3000/lists
+
+# to display the headers of previous get request using curl
+curl -i http://localhost:3000/lists
+
+# post request
+curl -X POST -H "Content-Type: application/json" \
+    -d '{"title": "Post Title"}' \
+    http://localhost:3000/lists
+
+# delete request
+curl -X DELETE http://localhost:3000/lists/63a805ff01cca7084b836373
+
+# saving a JSON response of an api request in a file
+curl -o learning/get-request-response.json http://localhost:3000/lists
+
