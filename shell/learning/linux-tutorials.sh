@@ -66,3 +66,46 @@ find . -empty
 find . -perm 777
 # deleting all the files ending with a pattern upto a certain depth
 find . -type f -name "*.txt" -maxdepth 2 -exec rm {} +
+
+# grep command (Global Regular Expression Print)
+# finding a string match in a file
+grep "Expression" learning/linux-tutorials.sh
+# finding the string match consisting of whole words (i-> case insensitive)
+grep -w "Expression" learning/linux-tutorials.sh
+grep -wi "Expression" learning/linux-tutorials.sh
+
+# find the string match with line at which they occur
+grep -win "Expression" learning/linux-tutorials.sh
+
+# to see 4 lines before the matching takes place (for the previous command)
+grep -win -B 4 "Expression" learning/linux-tutorials.sh
+
+# to see 4 lines after the matching takes place (for the previous command)
+grep -win -A 4 "Expression" learning/linux-tutorials.sh
+
+# to see 4 lines before and after the matching takes place (for the previous command)
+grep -win -C 4 "Expression" learning/linux-tutorials.sh
+
+# for the whole directory scan in a given directory
+grep -win -C 4 "grep" learning/*
+
+# for the whole directory scan in the current directory
+grep -winr -C 4 "cd" .
+
+# to view the files in which the match has occured
+grep -wirl -C 4 "cd" .
+
+# to view the files with the number of matches
+grep -wirc -C 4 "cd" .
+
+# grep our history in terminal
+history | grep "git commit"
+
+# to search within the results we have got using grep of our history
+history | grep "git commit" | grep ".gitignore"
+
+# grepping using a regular expression
+grep ".... | ...." learning/linux-tutorials.sh
+grep -P "\d{2}" learning/linux-tutorials.sh
+grep -wirlP "\d{2}" .
+
