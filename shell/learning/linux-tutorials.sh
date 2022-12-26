@@ -130,3 +130,9 @@ curl -X DELETE http://localhost:3000/lists/63a805ff01cca7084b836373
 # saving a JSON response of an api request in a file
 curl -o learning/get-request-response.json http://localhost:3000/lists
 
+# rsync command
+# syncing the files from folder1 to folder2
+rsync -r folder1/ folder2/
+
+# to view the files which will be a part of the dry run
+rsync -av --dry-run folder1/ folder2/
