@@ -13,3 +13,7 @@ python3.8 -m pip install --upgrade pip
 python3.8 -m pip install mysql-connector-python
 python3.8 python/mysql-scripting.py
 ```
+> Deactivate the virtual environment
+```sh
+deactivate
+```
