@@ -11,7 +11,7 @@ Store user name and password in conf file with 600 permission or make use of the
 ```shell
 mysql_config_editor set --login-path=local --host=localhost --user=username --password
 ```
-where username is your user name and password is later asked in the console window. After this follow the way to query in MySQL DB as done in the [firstScript.ksh](shell/firstScript.ksh) file. This is to avoid providing password from the script file.
+where username is your user name and password is later asked in the console window. After this follow the way to query in MySQL DB as done in the [firstScript.ksh](shell/learning/firstScript.ksh) file. This is to avoid providing password from the script file.
 
 ![Shell Scripting](https://www.cyberciti.biz/media/new/faq/2016/01/Hello-World-Bash-Shell-Script-Program.jpg "Bash scripting")
 
