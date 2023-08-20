@@ -17,3 +17,17 @@ python3.8 python/mysql-scripting.py
 ```sh
 deactivate
 ```
+> To view the dependency tree of the python project
+```sh
+python3.8 -m pip install pipdeptree
+python3.8 -m pipdeptree
+pip install pip-tools
+```
+Now create a `requirements.in` file and make a note of dependency names in it. Compile this file using pip-tools by running the following command:
+```sh
+pip-compile requirements.in
+```
+This would generate a `requirements.txt` file with dependency versions. To upgrade/install dependencies:
+```sh
+pip-sync
+```
